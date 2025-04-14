@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@croud-ui/tokens": "^2.1.0",
+    "@element-plus/icons-vue": "^2.3.1",
     "element-plus": "^2.9.7",
     "lodash-es": "^4.17.21",
     "pinia": "^3.0.1",

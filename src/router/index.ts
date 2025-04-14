@@ -1,8 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import IndexView from '../views/IndexView.vue'
+import DashboardView from '../views/DashboardView.vue'
+import NewRunView from '../views/NewRunView.vue'
+import ResultView from '../views/ResultView.vue'
 
-enum RouteName {
-  tool = 'tool-view',
+export enum RouteName {
+  Dashboard = 'tool-dashboard',
+  NewRun = 'tool-new-run',
+  Result = 'tool-result',
 }
 
 const router = createRouter({
@@ -10,8 +14,18 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: RouteName.tool,
-      component: IndexView,
+      name: RouteName.Dashboard,
+      component: DashboardView,
+    },
+    {
+      path: '/runs/new',
+      name: RouteName.NewRun,
+      component: NewRunView,
+    },
+    {
+      path: '/runs/:id',
+      name: RouteName.Result,
+      component: ResultView,
     },
   ],
 })
