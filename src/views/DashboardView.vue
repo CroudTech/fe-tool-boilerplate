@@ -7,9 +7,10 @@ import { ElIcon } from 'element-plus'
 
 <template>
   <ToolSectionCard heading="Dashboard"
-    >This is the index view of your new tool<template #title-append
+    ><template #title-append
       ><RouterLink :to="{ name: RouteName.NewRun }"
         ><ElButton type="primary"
           >New <ElIcon class="cui-ml-2"><Plus /></ElIcon></ElButton></RouterLink></template
-  ></ToolSectionCard>
+  >
+  </ToolSectionCard>
 </template>

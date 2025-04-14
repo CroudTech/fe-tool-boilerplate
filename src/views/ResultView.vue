@@ -6,8 +6,7 @@ import { RouteName } from '@/router'
 
 <template>
   <ToolSectionCard heading="Result"
-    >This is the result view of your new tool
-    <template #title-append
+    ><template #title-append
       ><RouterLink :to="{ name: RouteName.Dashboard }"
         ><ElButton>Back to dashboard</ElButton></RouterLink
       ></template
