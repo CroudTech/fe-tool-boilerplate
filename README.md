@@ -7,7 +7,7 @@ Vue 3 + Vite + TypeScript + Vitest + ESLint
 [![Degit Ready](https://img.shields.io/badge/Degit-Ready-brightgreen)](https://github.com/Rich-Harris/degit)
 [![Yarn](https://img.shields.io/badge/Yarn-berry-blue?logo=yarn&logoColor=white)](https://yarnpkg.com/)
 
-This template will help you quickly start developing with Vue 3, Vite, TypeScript, Element Plus and Tailwind.
+This template will help you quickly start developing tools with Vue 3, Vite, TypeScript, Element Plus and Tailwind.
 
 ## Project Setup
 
@@ -62,3 +62,48 @@ yarn dev
    git add .
    git commit -m "Initial commit"
    ```
+
+## Exposing Views for Module Federation
+
+To enable **Module Federation** and allow this app to expose specific views (or any modules) to a host application, follow these steps:
+
+### 1. Configure `vite.config.ts`
+
+Open your `vite.config.ts` file and set up the federation plugin with the views you want to expose:
+
+```ts
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import federation from '@originjs/vite-plugin-federation'
+
+export default defineConfig({
+  plugins: [
+    vue(),
+    federation({
+      name: 'fe_tool',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './DashboardView': './src/views/DashboardView.vue',
+        './NewRunView': './src/views/NewRunView.vue',
+        './ResultView': './src/views/ResultView.vue',
+      },
+      shared: ['vue'],
+    }),
+  ],
+  build: {
+    target: 'esnext',
+    minify: false,
+    cssCodeSplit: false,
+  },
+})
+```
+
+### 2. Build the Remote App
+
+Run the build command to generate the `remoteEntry.js` file that a host app can consume:
+
+```bash
+yarn build
+```
+
+This sets up the app as a **remote module**, exposing `DashboardView`, `NewRunView`, and `ResultView` to be used in a host app via Module Federation.
