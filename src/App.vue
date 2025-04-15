@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { RouterView, useRoute } from 'vue-router'
 import { ElContainer, ElMain, ElButton, ElIcon } from 'element-plus'
+import { Plus } from '@element-plus/icons-vue'
 import ToolSectionCard from '@/components/ToolSectionCard.vue'
 import { computed } from 'vue'
-import { RouteName } from './router'
-import { Plus } from '@element-plus/icons-vue'
+import { RouteName } from '@/router'
 
 const route = useRoute()
 
