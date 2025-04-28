@@ -9,7 +9,7 @@ Vue 3 + Vite + TypeScript + Vitest + ESLint
 
 This template will help you quickly start developing tools with Vue 3, Vite, TypeScript, Element Plus and Tailwind.
 
-<img width="1440" alt="image" src="https://github.com/user-attachments/assets/8f472fa9-861f-42cb-b334-0ecca0d81f41" />
+<img width="1427" alt="image" src="https://github.com/user-attachments/assets/c2a0c063-6b16-4100-874d-ac1b9909f50e" />
 
 ## Project Setup
 
